@@ -1,4 +1,6 @@
 const express = require("express");
+const auth = require("../middlewares/auth");
+const { upload } = require("../middlewares/upload");
 const { productValidation } = require("../validation");
 const { productController } = require("../controllers");
 const validate = require("../middlewares/validate");
@@ -25,6 +27,8 @@ router.delete(
 
 router.put(
   "/update-product/:productId",
+  auth(),
+  upload.single("Product_Image"),
   productController.update_Product
 )
 
