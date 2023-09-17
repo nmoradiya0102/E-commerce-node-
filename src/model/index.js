@@ -5,3 +5,4 @@ module.exports.sub_category = require("./sub.category.model");
 module.exports.cart = require("./cart.model");
 module.exports.token = require("./token.model");
 module.exports.order = require("./order.model");
+module.exports.banner = require("./banner.model");
