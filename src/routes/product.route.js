@@ -31,5 +31,4 @@ router.put(
   upload.single("Product_Image"),
   productController.update_Product
 )
-
 module.exports = router;
