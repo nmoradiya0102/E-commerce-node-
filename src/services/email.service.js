@@ -11,7 +11,7 @@ let transport = nodemailer.createTransport({
 });
 
 /** Send mail */
-const sendMail = async (to, subject, text) => {
+const send_Mail = async (to, subject, text) => {
   try {
     return transport.sendMail({
       from: config.email.from,
@@ -25,5 +25,5 @@ const sendMail = async (to, subject, text) => {
 };
 
 module.exports = {
-  sendMail,
+  send_Mail,
 };
