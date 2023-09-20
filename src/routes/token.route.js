@@ -1,6 +1,6 @@
 const express = require("express");
 const validate = require("../middlewares/validate");
-const { tokenValidation } = require("../validation");
+const { tokenValidation } = require("../validations");
 const { tokenController } = require("../controllers");
 const auth = require("../middlewares/auth");
 

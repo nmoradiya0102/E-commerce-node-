@@ -91,10 +91,32 @@ const delete_User = async (req, res) => {
   }
 };
 
+/** Send mail to reqested email */
+const send_Mail = async (req, res) => {
+  try {
+    const reqBody = req.body;
+    const sendEmail = await emailService.sendMail(
+      reqBody.email,
+      reqBody.subject,
+      reqBody.text
+    );
+    if (!sendEmail) {
+      throw new Error("Something went wrong..!");
+    }
+
+    res
+      .status(200)
+      .json({ success: true, message: "Email send successfully!" });
+  } catch (error) {
+    res.status(400).json({ success: false, message: error.message });
+  }
+};
+
 module.exports = {
   create_User,
   get_User_List,
   get_User_Details,
   update_User,
   delete_User,
+  send_Mail
 };

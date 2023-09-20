@@ -1,6 +1,6 @@
 const express = require("express");
 const validate = require("../middlewares/validate");
-const { orderValidation } = require("../validation");
+const { orderValidation } = require("../validations");
 const { orderController } = require("../controllers");
 const router = express.Router();
 

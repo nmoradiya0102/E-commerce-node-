@@ -17,6 +17,10 @@ const productSchema = new mongoose.Schema(
             type : mongoose.Types.ObjectId,
             ref : "category"
         },
+        sub_category : {
+            type : mongoose.Types.ObjectId,
+            ref : "Sub_category"
+        },
         is_active : {
             type : Boolean,
             default : true,
@@ -25,7 +29,14 @@ const productSchema = new mongoose.Schema(
     {
         timestamps: true,
         versionkey: false,
-    }
+        toJSON: {
+            transform: function (doc, data) {
+              if (data?.product_image) {
+                data.product_image = `${config.base_url}product_images/${data.product_image}`;
+              }
+            },
+        },
+    },
 );
 
 const Product = mongoose.model("Product" , productSchema);

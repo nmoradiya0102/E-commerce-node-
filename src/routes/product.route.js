@@ -1,7 +1,7 @@
 const express = require("express");
 const auth = require("../middlewares/auth");
 const { upload } = require("../middlewares/upload");
-const { productValidation } = require("../validation");
+const { productValidation } = require("../validations");
 const { productController } = require("../controllers");
 const validate = require("../middlewares/validate");
 

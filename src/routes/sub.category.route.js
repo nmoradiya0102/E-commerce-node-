@@ -1,5 +1,5 @@
 const express = require("express");
-const { sub_categoryValidation } = require("../validation");
+const { sub_categoryValidation } = require("../validations");
 const { sub_categoryController } = require("../controllers");
 const validate = require("../middlewares/validate")
 
