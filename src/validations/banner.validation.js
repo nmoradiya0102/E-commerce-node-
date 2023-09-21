@@ -1,7 +1,7 @@
 const Joi = require("joi");
 
 /** Create Banner */
-const create_Banner = {
+const createBanner = {
   body: Joi.object({
     banner_name: Joi.string().required().trim(),
     banner_description: Joi.string().optional(),
@@ -10,27 +10,25 @@ const create_Banner = {
   }),
 };
 
-/** Get Banner list */
-const get_List = {
-    query: Joi.object({
-      search: Joi.string().trim().allow(""),
-      sortBy: Joi.string().trim().allow(""),
-      limit: Joi.number().integer().allow(""),
-      page: Joi.number().integer().allow(""),
-    }),
-  };
-
 /** Get Banner details */
-/**const get_Details = {
+const getDetails = {
   params: Joi.object({
     productId: Joi.string().required().trim(),
   }),
-};*/
+};
 
-
+/** Get Banner list */
+const getList = {
+  query: Joi.object({
+    search: Joi.string().trim().allow(""),
+    sortBy: Joi.string().trim().allow(""),
+    limit: Joi.number().integer().allow("").default(10),
+    page: Joi.number().integer().allow("").default(1),
+  }),
+};
 
 /** Update Banner details */
-/**const update_Banner = {
+const updateBanner = {
   params: Joi.object({
     bannerId: Joi.string().required().trim(),
   }),
@@ -40,11 +38,11 @@ const get_List = {
     banner_image: Joi.string().optional(),
     product: Joi.string().optional(),
   }),
-};*/
+};
 
 module.exports = {
-  create_Banner,
-  get_List,
-//   get_Details,
-//   update_Banner,
+  createBanner,
+  getDetails,
+  getList,
+  updateBanner,
 };

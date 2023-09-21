@@ -4,24 +4,24 @@ const config = require("../config/config");
 const bannerSchema = mongoose.Schema(
   {
     banner_name: {
-      type : String,
-      trim : true,
+      type: String,
+      trim: true,
     },
     banner_description: {
-      type : String,
-      trim : true,
+      type: String,
+      trim: true,
     },
     banner_image: {
-      type : String,
-      trim : true,
+      type: String,
+      trim: true,
     },
     product: {
-      type : mongoose.Types.ObjectId,
-      ref : "Product",
+      type: mongoose.Types.ObjectId,
+      ref: "Product",
     },
     is_active: {
-      type : Boolean,
-      default : false,
+      type: Boolean,
+      default: false,
     },
   },
   {

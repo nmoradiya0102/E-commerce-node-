@@ -28,7 +28,7 @@ router.delete(
 router.put(
   "/update-product/:productId",
   auth(),
-  upload.single("Product_Image"),
+  // upload.single("Product_Image"),
   productController.update_Product
 )
 module.exports = router;

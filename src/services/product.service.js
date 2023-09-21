@@ -40,7 +40,7 @@ const manage_Product_Status = async (product_Id) => {
   }
 
   return Product.findOneAndUpdate(
-    { _id: productId },
+    { _id: Product },
     {
       $set: {
         is_active: !productExists.is_active,
