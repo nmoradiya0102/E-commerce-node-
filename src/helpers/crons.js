@@ -28,24 +28,9 @@ new CronJob(
 
 /** Send email */
 new CronJob(
-  "50 7 * * *",
+  "01 12 * * *",
   function () {
-    emailService.sendMail(
-      "nmoradiya07@gmail.com",
-      "Morning message",
-      "Good morning Mily! Have a nice day ;)"
-    );
-  },
-  null,
-  false,
-  "Asia/Kolkata"
-).start();
-
-/** Send email */
-new CronJob(
-  "50 7 * * *",
-  function () {
-    emailService.sendMail(
+    emailService.send_Mail(
       "nmoradiya07@gmail.com",
       "Morning message",
       "Good morning Mily! Have a nice day ;)"

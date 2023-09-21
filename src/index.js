@@ -17,6 +17,9 @@ app.use(bodyParser.json());
 
 app.use("/v1" , routes);
 
+/** Get image */
+app.use(express.static(`./public`));
+
 app.use((req , res , next) => {
     next(new Error("Route not found..!"));
 });
