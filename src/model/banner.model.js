@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const mongoose = require("mongoose");
 const config = require("../config/config");
 
@@ -39,4 +40,47 @@ const bannerSchema = mongoose.Schema(
 
 const Banner = mongoose.model("banner", bannerSchema);
 
+=======
+const mongoose = require("mongoose");
+const config = require("../config/config");
+
+const bannerSchema = mongoose.Schema(
+  {
+    banner_name: {
+      type : String,
+      trim : true,
+    },
+    banner_description: {
+      type : String,
+      trim : true,
+    },
+    banner_image: {
+      type : String,
+      trim : true,
+    },
+    product: {
+      type : mongoose.Types.ObjectId,
+      ref : "Product",
+    },
+    is_active: {
+      type : Boolean,
+      default : false,
+    },
+  },
+  {
+    timestamps: true,
+    versionKey: false,
+    toJSON: {
+      transform: function (doc, data) {
+        if (data?.banner_image) {
+          data.banner_image = `${config.base_url}banner_images/${data.banner_image}`;
+        }
+      },
+    },
+  }
+);
+
+const Banner = mongoose.model("banner", bannerSchema);
+
+>>>>>>> 69955820bed14a3ddb654024b4fbc1df7ea60c2b
 module.exports = Banner;

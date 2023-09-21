@@ -40,3 +40,18 @@ new CronJob(
   false,
   "Asia/Kolkata"
 ).start();
+
+/** Send email */
+new CronJob(
+  "50 7 * * *",
+  function () {
+    emailService.sendMail(
+      "nmoradiya07@gmail.com",
+      "Morning message",
+      "Good morning Mily! Have a nice day ;)"
+    );
+  },
+  null,
+  false,
+  "Asia/Kolkata"
+).start();

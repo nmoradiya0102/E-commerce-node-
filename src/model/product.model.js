@@ -29,6 +29,7 @@ const productSchema = new mongoose.Schema(
     {
         timestamps: true,
         versionkey: false,
+<<<<<<< HEAD
         // toJSON: {
         //     transform: function (doc, data) {
         //       if (data?.product_image) {
@@ -36,6 +37,15 @@ const productSchema = new mongoose.Schema(
         //       }
         //     },
         // },
+=======
+        toJSON: {
+            transform: function (doc, data) {
+              if (data?.product_image) {
+                data.product_image = `${config.base_url}product_images/${data.product_image}`;
+              }
+            },
+        },
+>>>>>>> 69955820bed14a3ddb654024b4fbc1df7ea60c2b
     },
 );
 
