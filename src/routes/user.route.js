@@ -23,6 +23,12 @@ router.put(
     "/update-user/:userId",
     validate(userValidation.create_User),
     userController.update_User
+);
+
+router.post(
+    "/send-mail",
+    validate(userValidation.send_Mail),
+    userController.send_Mail
 )
 
 module.exports = router;

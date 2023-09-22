@@ -13,14 +13,14 @@ router.post(
   // auth(),
   upload.single("product_image"),
   validate(bannerValidation.createBanner),
-  bannerController.createBanner
+  bannerController.create_Banner
 );
 
 /** Get production list */
 router.get(
   "/list",
   validate(bannerValidation.getList),
-  bannerController.getBannerList
+  bannerController.get_Banner_List
 );
 
 module.exports = router;
